@@ -44,7 +44,7 @@ namespace CommentViewer.Plugin
             public string SiteName { get; internal set; }
             public string Nickname { get; internal set; }
         }
-        public void OnMessageReceived(ISiteMessage message, IMessageMetadata messageMetadata)
+        public void OnMessageReceived(ISiteMessage message, IMessageMetadata messageMetadata, string _)
         {
             //if (!(message is IMessageComment comment)) return;
             if (!Options.IsEnabled || messageMetadata.IsNgUser || messageMetadata.IsInitialComment)

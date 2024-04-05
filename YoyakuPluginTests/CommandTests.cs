@@ -93,7 +93,7 @@ namespace YoyakuPluginTests
             messageMetadataMock.Setup(x => x.SiteContextGuid).Returns(Guid.NewGuid());
             var messageMetadata = messageMetadataMock.Object;
 
-            plugin.OnMessageReceived(message, messageMetadata);
+            plugin.OnMessageReceived(message, messageMetadata, "");
 
             var ms = vm.RegisteredUsers.ToArray();
             var pluginUser = ms[0];
@@ -126,7 +126,7 @@ namespace YoyakuPluginTests
             messageMetadataMock.Setup(x => x.SiteContextGuid).Returns(Guid.NewGuid());
             var messageMetadata = messageMetadataMock.Object;
 
-            plugin.OnMessageReceived(message, messageMetadata);
+            plugin.OnMessageReceived(message, messageMetadata, "");
 
             var ms = vm.RegisteredUsers.ToArray();
             var pluginUser = ms[0];
@@ -227,7 +227,7 @@ namespace YoyakuPluginTests
             messageMetadataMock.Setup(x => x.SiteContextGuid).Returns(Guid.NewGuid());
             var messageMetadata = messageMetadataMock.Object;
 
-            _plugin.OnMessageReceived(message, messageMetadata);
+            _plugin.OnMessageReceived(message, messageMetadata, "");
         }
         [Test]
         public void 登録が可能か()

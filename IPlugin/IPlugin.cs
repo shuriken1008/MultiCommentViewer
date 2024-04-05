@@ -12,7 +12,7 @@ namespace Plugin
     {
         string Name { get; }
         string Description { get; }
-        void OnMessageReceived(ISiteMessage message, IMessageMetadata messageMetadata);
+        void OnMessageReceived(ISiteMessage message, IMessageMetadata messageMetadata, string connectionName);
         //connectionが追加されたり削除されたりしたら通知される仕組みが欲しい
         //接続、切断情報も。
         void OnLoaded();

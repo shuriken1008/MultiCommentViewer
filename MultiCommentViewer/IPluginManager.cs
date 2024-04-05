@@ -16,7 +16,7 @@ namespace MultiCommentViewer
     {
         event EventHandler<IPlugin> PluginAdded;
         void LoadPlugins(IPluginHost host);
-        void SetMessage(ISiteMessage message, IMessageMetadata messageMetadata);
+        void SetMessage(ISiteMessage message, IMessageMetadata messageMetadata, string connectionName);
         void OnLoaded();
         void OnClosing();
         void OnTopmostChanged(bool isTopmost);
@@ -124,11 +124,11 @@ namespace MultiCommentViewer
             }
         }
 
-        public void SetMessage(ISiteMessage message, IMessageMetadata messageMetadata)
+        public void SetMessage(ISiteMessage message, IMessageMetadata messageMetadata, string connectionName)
         {
             foreach (var plugin in _plugins)
             {
-                plugin.OnMessageReceived(message, messageMetadata);
+                plugin.OnMessageReceived(message, messageMetadata, connectionName);
             }
         }
 

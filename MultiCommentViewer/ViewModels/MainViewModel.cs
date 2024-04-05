@@ -995,7 +995,7 @@ namespace MultiCommentViewer
                 //プラグインに渡すのはIInfoMessage以外全て
                 if (!(e.Message is IInfoMessage))
                 {
-                    _pluginManager.SetMessage(e.Message, e.Metadata);
+                    _pluginManager.SetMessage(e.Message, e.Metadata, connectionViewModel.Name);
                 }
                 await methods.AfterCommentAdded();
             }

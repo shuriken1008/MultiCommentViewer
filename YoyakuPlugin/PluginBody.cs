@@ -29,7 +29,7 @@ namespace OpenrecYoyakuPlugin
         }
         public IPluginHost Host { get; set; }
 
-        public void OnMessageReceived(ISiteMessage message, IMessageMetadata messageMetadata)
+        public void OnMessageReceived(ISiteMessage message, IMessageMetadata messageMetadata, string _)
         {
             if (!_options.IsEnabled || messageMetadata.IsNgUser || messageMetadata.IsInitialComment)
                 return;

@@ -65,7 +65,7 @@ namespace CommentGeneratorPluginTests
 
 
             var plugin = pluginMock.Object;
-            plugin.OnMessageReceived(message, messageMetadata);
+            plugin.OnMessageReceived(message, messageMetadata, "");
             plugin.Write();
 
             if (!File.Exists(FilePath))

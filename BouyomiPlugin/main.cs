@@ -668,7 +668,7 @@ namespace BouyomiPlugin
             }
             return (name, comment);
         }
-        public void OnMessageReceived(ISiteMessage message, IMessageMetadata messageMetadata)
+        public void OnMessageReceived(ISiteMessage message, IMessageMetadata messageMetadata, string _)
         {
             if (!_options.IsEnabled || messageMetadata.IsNgUser || messageMetadata.IsInitialComment || (messageMetadata.Is184 && !_options.Want184Read))
                 return;
